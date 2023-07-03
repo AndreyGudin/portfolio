@@ -1,7 +1,6 @@
-import { Button } from "@/shared/ui/Button/Button";
+import { Navbar } from "@/widget/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { ThemeSwitcher } from "@/widget/ThemeSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-background text-text`}>
-        <ThemeSwitcher />
+      <body
+        className={`${inter.className} min-h-screen bg-linear-bg bg-no-repeat dark:bg-dark-linear-bg dark:bg-dark-background text-text dark:text-dark-text`}
+      >
+        <Navbar />
         {children}
       </body>
     </html>
