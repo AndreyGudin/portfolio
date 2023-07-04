@@ -15,10 +15,10 @@ interface NavbarItem {
 const NavbarItems: NavbarItem[] = [
   {
     href: "#start",
-    title: "Home",
+    title: "Item1",
   },
-  { href: "#skills", title: "Skills" },
-  { href: "#projects", title: "Projects" },
+  { href: "#skills", title: "Item2" },
+  { href: "#projects", title: "Item3" },
 ];
 
 export const Navbar: FC<NavbarProps> = memo(

@@ -21,7 +21,7 @@ export const titleVariants = cva("", {
   variants: {
     sizeTitle: {
       medium: ["text-5xl"],
-      large: ["text-7xl"],
+      large: ["text-9xl"],
     },
   },
   defaultVariants: {
@@ -38,7 +38,7 @@ interface TextProps extends TextVariantsProps, TitleVariantsProps {
 export const Text: FC<TextProps> = memo(
   ({ className = "", text, title = "", sizeText, sizeTitle }: TextProps) => {
     return (
-      <div className={`${className}`}>
+      <div className={`${className} flex flex-col gap-5`}>
         {title.length > 0 ? (
           <p className={titleVariants({ sizeTitle })}>{title}</p>
         ) : null}
