@@ -22,15 +22,17 @@ export function useTheme(): UseThemeType {
   };
 
   useEffect(() => {
+    const savedTheme =
+      (localStorage.getItem("theme") as Theme | null) ?? Theme.LIGHT;
+    console.log("savedTheme", savedTheme);
+    setTheme(savedTheme);
+    document.documentElement.className = savedTheme ?? Theme.LIGHT;
+  }, []);
+
+  useEffect(() => {
     document.documentElement.className = theme ?? Theme.LIGHT;
     localStorage.setItem("theme", theme ?? Theme.LIGHT);
   }, [theme]);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    setTheme(savedTheme ?? Theme.LIGHT);
-    document.documentElement.className = savedTheme ?? Theme.LIGHT;
-  }, []);
 
   return [theme, toggleTheme];
 }

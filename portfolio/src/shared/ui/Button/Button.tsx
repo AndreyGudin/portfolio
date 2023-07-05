@@ -1,6 +1,5 @@
 "use client";
 
-import { useTheme } from "@/shared/lib/hooks/useTheme";
 import { memo } from "react";
 import type { ButtonHTMLAttributes, FC, ReactNode } from "react";
 

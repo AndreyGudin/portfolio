@@ -20,9 +20,7 @@ export const Skills: FC<SkillsProps> = memo(
   ({ className = "" }: SkillsProps) => {
     return (
       <section
-        className={
-          "w-2/3 flex flex-wrap justify-between border border-accent p-9"
-        }
+        className={`${className} w-full flex flex-wrap gap-9 justify-center border border-accent dark:border-white p-9 cursor-pointer`}
       >
         {SkillsItem.map((item) => {
           return <Tab text={item} key={item} />;

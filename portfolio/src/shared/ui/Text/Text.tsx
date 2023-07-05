@@ -32,17 +32,25 @@ export const titleVariants = cva("", {
 interface TextProps extends TextVariantsProps, TitleVariantsProps {
   className?: string;
   title?: string;
-  text: string;
+  text?: string;
 }
 
 export const Text: FC<TextProps> = memo(
-  ({ className = "", text, title = "", sizeText, sizeTitle }: TextProps) => {
+  ({
+    className = "",
+    text = "",
+    title = "",
+    sizeText,
+    sizeTitle,
+  }: TextProps) => {
     return (
       <div className={`${className} flex flex-col gap-5`}>
         {title.length > 0 ? (
           <p className={titleVariants({ sizeTitle })}>{title}</p>
         ) : null}
-        <p className={textVariants({ sizeText })}>{text}</p>
+        {text.length > 0 ? (
+          <p className={textVariants({ sizeText })}>{text}</p>
+        ) : null}
       </div>
     );
   }
