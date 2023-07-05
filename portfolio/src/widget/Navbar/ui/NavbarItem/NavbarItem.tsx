@@ -1,3 +1,4 @@
+import { Button } from "@/shared/ui/Button/Button";
 import { memo } from "react";
 import type { FC } from "react";
 
@@ -10,9 +11,11 @@ interface NavbarItemProps {
 export const NavbarItem: FC<NavbarItemProps> = memo(
   ({ className = "", href, title }: NavbarItemProps) => {
     return (
-      <a href={href} className={`${className}`}>
-        {title}
-      </a>
+      <Button theme={"link"}>
+        <a href={href} className={`${className}`}>
+          {title}
+        </a>
+      </Button>
     );
   }
 );

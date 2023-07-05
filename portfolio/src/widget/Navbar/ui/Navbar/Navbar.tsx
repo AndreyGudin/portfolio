@@ -1,7 +1,12 @@
-import { NavbarItem } from "@/widget/Navbar/ui/NavbarItem/NavbarItem";
-import { ThemeSwitcher } from "@/widget/ThemeSwitcher";
 import { memo } from "react";
 import type { FC } from "react";
+
+import { NavbarItem } from "@/widget/Navbar/ui/NavbarItem/NavbarItem";
+import { ThemeSwitcher } from "@/widget/ThemeSwitcher";
+import GithubIcon from "p/github1.svg";
+import LinkedInIcon from "p/linkedin.svg";
+import TelegramIcon from "p/telegram.svg";
+import Image from "next/image";
 
 interface NavbarProps {
   className?: string;
@@ -10,6 +15,11 @@ interface NavbarProps {
 interface NavbarItem {
   href: string;
   title: string;
+}
+
+interface NavbarIcon {
+  svg: string;
+  href: string;
 }
 
 const NavbarItems: NavbarItem[] = [
@@ -21,11 +31,28 @@ const NavbarItems: NavbarItem[] = [
   { href: "#projects", title: "Item3" },
 ];
 
+const NavbarIcons: NavbarIcon[] = [
+  {
+    svg: GithubIcon,
+    href: "",
+  },
+  {
+    svg: LinkedInIcon,
+    href: "",
+  },
+  {
+    svg: TelegramIcon,
+    href: "",
+  },
+];
+
 export const Navbar: FC<NavbarProps> = memo(
   ({ className = "" }: NavbarProps) => {
     return (
-      <nav className={`${className} w-full flex justify-end p-10`}>
-        <div className='flex w-1/3 justify-around text-3xl'>
+      <nav
+        className={`${className} sticky top-0 w-full justify-between items-center flex py-10 px-32`}
+      >
+        <div className='flex w-1/2 justify-around text-3xl'>
           {NavbarItems.map((item) => {
             return (
               <NavbarItem
@@ -36,7 +63,21 @@ export const Navbar: FC<NavbarProps> = memo(
             );
           })}
         </div>
-        <ThemeSwitcher />
+        <div className='w-1/3 flex justify-around items-center'>
+          {NavbarIcons.map((icon) => {
+            return (
+              <Image
+                className='cursor-pointer hover:scale-[1.05] transition-all'
+                src={icon.svg}
+                alt={icon.href}
+                key={icon.svg}
+                width={"50"}
+              />
+            );
+          })}
+
+          <ThemeSwitcher />
+        </div>
       </nav>
     );
   }

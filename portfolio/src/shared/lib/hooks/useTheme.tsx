@@ -2,14 +2,22 @@
 
 import { useEffect, useState } from "react";
 
-import { getFromLocalStorage } from "@/shared/lib/getFromLocalStorage/getFromLocalStorage";
-
 type UseThemeType = [theme: Theme | null, toggleTheme: () => void];
 
 export enum Theme {
   LIGHT = "light",
   DARK = "dark",
 }
+
+const deleteThemeFromHTmlAndAddNew = (className: string | null) => {
+  if (document.documentElement.classList.contains(Theme.LIGHT)) {
+    document.documentElement.classList.remove(Theme.LIGHT);
+  }
+  if (document.documentElement.classList.contains(Theme.DARK)) {
+    document.documentElement.classList.remove(Theme.DARK);
+  }
+  document.documentElement.classList.add(className ?? Theme.LIGHT);
+};
 
 export function useTheme(): UseThemeType {
   const [theme, setTheme] = useState<Theme | null>(null);
@@ -26,11 +34,11 @@ export function useTheme(): UseThemeType {
       (localStorage.getItem("theme") as Theme | null) ?? Theme.LIGHT;
     console.log("savedTheme", savedTheme);
     setTheme(savedTheme);
-    document.documentElement.className = savedTheme ?? Theme.LIGHT;
+    deleteThemeFromHTmlAndAddNew(savedTheme);
   }, []);
 
   useEffect(() => {
-    document.documentElement.className = theme ?? Theme.LIGHT;
+    deleteThemeFromHTmlAndAddNew(theme);
     localStorage.setItem("theme", theme ?? Theme.LIGHT);
   }, [theme]);
 

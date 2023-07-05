@@ -63,9 +63,18 @@ const ProjectsItems: ProjectItemType[] = [
 export const Projects: FC<ProjectsProps> = memo(
   ({ className = "" }: ProjectsProps) => {
     return (
-      <section className={`${className} flex flex-col gap-12 p-3`}>
+      <section
+        className={`${className} flex flex-col gap-12 p-3 scroll-mt-[140px]`}
+        id='projects'
+      >
         {ProjectsItems.map((item) => {
-          return <ProjectItem project={item} key={item.title} />;
+          return (
+            <ProjectItem
+              project={item}
+              key={item.title}
+              className="'bg-block3 dark:bg-dark-block3 p-block transition-all"
+            />
+          );
         })}
       </section>
     );

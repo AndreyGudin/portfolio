@@ -5,9 +5,9 @@ import { Skills } from "@/features/Skills";
 export default function Home() {
   return (
     <main className='p-32 gap-10 flex flex-col items-center'>
-      <SelfIntroduction className='bg-block1 dark:bg-dark-block1 p-block' />
-      <Skills className='bg-block2 dark:bg-dark-block2 p-block' />
-      <Projects className='bg-block3 dark:bg-dark-block3 p-block' />
+      <SelfIntroduction className='bg-block1 dark:bg-dark-block1 p-block transition-all' />
+      <Skills className='bg-block2 dark:bg-dark-block2 p-block transition-all' />
+      <Projects className='bg-block3 dark:bg-dark-block3 p-block transition-all' />
     </main>
   );
 }

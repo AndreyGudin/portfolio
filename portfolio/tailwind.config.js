@@ -24,6 +24,8 @@ module.exports = {
         "dark-primary-button": "#3a434b",
         "dark-secondary-button": "#0d0f11",
         "dark-accent": "#2f363d",
+        navbar: "#d0ed87",
+        "dark-navbar": "#3b4054",
         block1: "#6ce4bc",
         block2: "#6891e3",
         block3: "#c4d7fd",

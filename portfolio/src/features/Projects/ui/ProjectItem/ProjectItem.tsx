@@ -32,6 +32,7 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
             text={project.text}
             sizeText={"medium"}
             sizeTitle={"medium"}
+            className='w-[70%]'
           />
           <div className='flex gap-6'>
             <Button>

@@ -14,7 +14,10 @@ interface SelfIntroductionProps {
 export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
   ({ className = "" }: SelfIntroductionProps) => {
     return (
-      <section className={`${className} flex items-center p-3`}>
+      <section
+        className={`${className} flex items-center p-3 scroll-mt-[140px]`}
+        id='start'
+      >
         <div className='flex flex-col gap-20'>
           <Text
             text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aliquid officia eius, modi eos blanditiis, fugit perferendis eum deleniti culpa rerum minima doloribus, illum eveniet pariatur ullam numquam totam veritatis!'
