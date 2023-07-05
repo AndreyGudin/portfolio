@@ -23,9 +23,7 @@ export type ProjectItemType = {
 export const ProjectItem: FC<ProjectItemProps> = memo(
   ({ className = "", project }: ProjectItemProps) => {
     return (
-      <div
-        className={`${className} p-5 flex border border-accent dark:border-white hover:scale-[1.01]  shadow-[0_4px_9px_-4px_#3b71ca] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] transition-all`}
-      >
+      <>
         <div className='flex flex-col gap-28 justify-center'>
           <Text
             title={project.title}
@@ -45,7 +43,7 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
         </div>
 
         <Image src={project.src} alt={project.title} width={"600"} />
-      </div>
+      </>
     );
   }
 );
