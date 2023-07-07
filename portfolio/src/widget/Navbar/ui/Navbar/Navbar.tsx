@@ -1,5 +1,7 @@
-import { memo } from "react";
-import type { FC } from "react";
+"use client";
+
+import { memo, useCallback, useState } from "react";
+import type { FC, MouseEvent } from "react";
 
 import { NavbarItem } from "@/widget/Navbar/ui/NavbarItem/NavbarItem";
 import { ThemeSwitcher } from "@/widget/ThemeSwitcher";
@@ -48,17 +50,24 @@ const NavbarIcons: NavbarIcon[] = [
 
 export const Navbar: FC<NavbarProps> = memo(
   ({ className = "" }: NavbarProps) => {
+    const [activeButton, setActiveButton] = useState("");
+    const handleOnClick = useCallback((e: MouseEvent) => {
+      setActiveButton(e.currentTarget.id);
+    }, []);
+
     return (
       <nav
-        className={`${className} sticky top-0 w-full justify-between items-center flex py-10 px-32`}
+        className={`${className} sticky top-0 w-full justify-between items-center flex py-10 px-32 z-50`}
       >
         <div className='flex w-1/2 justify-around text-3xl'>
           {NavbarItems.map((item) => {
             return (
               <NavbarItem
+                handleOnClick={handleOnClick}
                 href={item.href}
                 title={item.title}
                 key={item.title}
+                active={activeButton === item.title}
               />
             );
           })}

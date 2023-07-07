@@ -1,6 +1,8 @@
+"use client";
+
 import { memo } from "react";
 import { cva, type VariantProps } from "cva";
-import type { ButtonHTMLAttributes, FC, ReactNode } from "react";
+import type { ButtonHTMLAttributes, FC, MouseEvent, ReactNode } from "react";
 
 export type ButtonVariantsProps = VariantProps<typeof buttonVariants>;
 
@@ -30,14 +32,27 @@ interface ButtonProps
     ButtonVariantsProps {
   className?: string;
   children: ReactNode;
+  active?: boolean;
+  handleOnClick?: (e: MouseEvent) => void;
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({ className = "", children, theme, ...props }: ButtonProps) => {
+  ({
+    className = "",
+    children,
+    theme,
+    active = false,
+    handleOnClick = () => {},
+    ...props
+  }: ButtonProps) => {
     return (
       <button
+        onClick={handleOnClick}
         type='button'
-        className={buttonVariants({ theme, className })}
+        className={buttonVariants({
+          theme,
+          className: `${className} ${active ? "bg-neutral-100" : ""}`,
+        })}
         {...props}
       >
         {children}
