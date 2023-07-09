@@ -3,6 +3,7 @@ import Image from "next/image";
 import { memo } from "react";
 import type { FC } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { Text } from "@/shared/ui/Text/Text";
 import { Button } from "@/shared/ui/Button/Button";
@@ -16,9 +17,11 @@ interface SelfIntroductionProps {
 
 export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
   ({ className = "" }: SelfIntroductionProps) => {
+    const t = useTranslations("Portfolio");
+
     return (
       <motion.section
-        className={`${className} flex items-center p-3 scroll-mt-[140px]`}
+        className={`${className} w-full flex items-center p-3 scroll-mt-[140px] justify-center`}
         initial='hidden'
         whileInView='visible'
         viewport={{ amount: 0.7 }}
@@ -29,10 +32,11 @@ export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
           className='flex flex-col gap-20 max-w-[70%]'
         >
           <Text
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aliquid officia eius, modi eos blanditiis, fugit perferendis eum deleniti culpa rerum minima doloribus, illum eveniet pariatur ullam numquam totam veritatis!'
-            title='Title Title ttitle teletll'
-            sizeText={"large"}
-            sizeTitle={"large"}
+            text={t("Описание")}
+            title={t("Приветствие")}
+            sizeText={"medium"}
+            sizeTitle={"medium"}
+            className='max-w-[500px]'
           />
           <Button>
             <Link

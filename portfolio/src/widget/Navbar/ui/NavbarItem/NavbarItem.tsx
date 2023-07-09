@@ -25,7 +25,7 @@ export const NavbarItem: FC<NavbarItemProps> = memo(
         active={active}
         id={title}
       >
-        <a href={href} className={`${className}`}>
+        <a href={href} className={`${className} font-semibold`}>
           {title}
         </a>
       </Button>

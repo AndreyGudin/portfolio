@@ -1,10 +1,10 @@
 "use client";
 
-import { memo, useEffect, useState } from "react";
+import { memo } from "react";
 import type { FC } from "react";
+import { useTranslations } from "next-intl";
 
 import { Theme, useTheme } from "@/shared/lib/hooks/useTheme";
-import { getFromLocalStorage } from "@/shared/lib/getFromLocalStorage/getFromLocalStorage";
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -13,7 +13,7 @@ interface ThemeSwitcherProps {
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(
   ({ className = "" }: ThemeSwitcherProps) => {
     const [theme, toggleTheme] = useTheme();
-
+    const t = useTranslations("Portfolio");
     return (
       <div className={`${className}`}>
         <input
@@ -28,7 +28,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(
           className='inline-block pl-[0.15rem] hover:cursor-pointer'
           htmlFor='flexSwitchCheckDefault'
         >
-          {theme && theme === Theme.LIGHT ? "Светлая" : "Темная"}
+          {theme && theme === Theme.LIGHT ? t("Светлая") : t("Темная")}
         </label>
       </div>
     );
