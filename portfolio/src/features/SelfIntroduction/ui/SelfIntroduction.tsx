@@ -8,6 +8,7 @@ import { Text } from "@/shared/ui/Text/Text";
 import { Button } from "@/shared/ui/Button/Button";
 import image1 from "p/image1.svg";
 import { fromLeft } from "@/shared/lib/animations/animation";
+import Link from "next/link";
 
 interface SelfIntroductionProps {
   className?: string;
@@ -33,7 +34,16 @@ export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
             sizeText={"large"}
             sizeTitle={"large"}
           />
-          <Button>Download</Button>
+          <Button>
+            <Link
+              download
+              href={"./1.txt"}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Download
+            </Link>
+          </Button>
         </motion.div>
         <motion.div
           animate={{
