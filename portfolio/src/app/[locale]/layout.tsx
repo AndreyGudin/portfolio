@@ -1,11 +1,13 @@
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
+import localFont from "next/font/local";
 
 import { Navbar } from "@/widget/Navbar";
 import "../globals.css";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = localFont({
+  src: "../fonts/SourceCodePro-VariableFont_wght.ttf",
+});
 
 export const metadata = {
   title: "Portfolio",
@@ -32,7 +34,7 @@ export default async function RootLayout({
   return (
     <html lang='en' className='scroll-smooth'>
       <body
-        className={`${inter.className} min-h-screen bg-linear-bg bg-no-repeat dark:bg-dark-linear-bg dark:bg-dark-background text-text dark:text-dark-text transition-all`}
+        className={`${font.className} min-h-screen bg-linear-bg bg-no-repeat dark:bg-dark-linear-bg dark:bg-dark-background text-text dark:text-dark-text transition-all`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar className='bg-navbar dark:bg-dark-navbar' />
