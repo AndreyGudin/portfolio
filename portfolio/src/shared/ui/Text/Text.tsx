@@ -17,7 +17,7 @@ export const textVariants = cva("", {
   },
 });
 
-export const titleVariants = cva("", {
+export const titleVariants = cva("font-semibold", {
   variants: {
     sizeTitle: {
       medium: ["text-5xl"],

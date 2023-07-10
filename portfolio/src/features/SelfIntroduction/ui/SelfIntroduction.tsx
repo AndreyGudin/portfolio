@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 import { Text } from "@/shared/ui/Text/Text";
 import { Button } from "@/shared/ui/Button/Button";
-import image1 from "p/image1.svg";
+import image1 from "p/my_photo.jpg";
 import { fromLeft } from "@/shared/lib/animations/animation";
 import Link from "next/link";
 
@@ -45,7 +45,7 @@ export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
               target='_blank'
               rel='noopener noreferrer'
             >
-              Download
+              {t("Скачать")}
             </Link>
           </Button>
         </motion.div>
@@ -58,9 +58,9 @@ export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className='w-[600px] h-[600px]'
+          className='w-[400px] h-fit'
         >
-          <Image src={image1} alt='self' width={"600"} height={"600"} />
+          <Image src={image1} alt='self' width={"400"} height={"600"} />
         </motion.div>
       </motion.section>
     );

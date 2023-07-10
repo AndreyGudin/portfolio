@@ -1,6 +1,7 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import type { FC } from "react";
 import Link from "next-intl/link";
+import { usePathname } from "next-intl/client";
 
 interface LangSwitcherProps {
   className?: string;
@@ -8,12 +9,32 @@ interface LangSwitcherProps {
 
 export const LangSwitcher: FC<LangSwitcherProps> = memo(
   ({ className = "" }: LangSwitcherProps) => {
+    const [lang, setLang] = useState("ru");
+
+    useEffect(() => {
+      const currentLangWithDefaultRu =
+        window.location.href.split("/").at(-1) ?? "ru";
+      setLang(currentLangWithDefaultRu);
+    }, [lang]);
+
     return (
       <div className={`${className} flex gap-10`}>
-        <Link href='/' locale='ru'>
+        <Link
+          href='/'
+          locale='ru'
+          className={
+            lang === "ru" ? "font-bold border rounded border-black" : ""
+          }
+        >
           Ru
         </Link>
-        <Link href='/' locale='en'>
+        <Link
+          href='/'
+          locale='en'
+          className={
+            lang === "en" ? "font-bold border rounded border-black" : ""
+          }
+        >
           En
         </Link>
       </div>
