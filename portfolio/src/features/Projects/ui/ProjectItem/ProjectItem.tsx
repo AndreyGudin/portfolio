@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/shared/ui/Button/Button";
+import { Button, buttonVariants } from "@/shared/ui/Button/Button";
 import { Text } from "@/shared/ui/Text/Text";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,7 +24,7 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
   ({ className = "", project }: ProjectItemProps) => {
     return (
       <>
-        <div className='flex flex-col gap-28 justify-center'>
+        <div className='flex flex-col gap-28 justify-center items-center'>
           <Text
             title={project.title}
             text={project.text}
@@ -33,16 +33,33 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
             className='w-[70%]'
           />
           <div className='flex gap-6'>
-            <Button>
-              <Link href={project.hrefToGit}>To GitHub</Link>
-            </Button>
-            <Button>
-              <Link href={project.hrefToSite}>To Site</Link>
-            </Button>
+            <Link
+              href={project.hrefToGit}
+              className={buttonVariants({
+                className: "flex justify-center items-center",
+              })}
+              target='_blank'
+            >
+              To GitHub
+            </Link>
+
+            <Link
+              href={project.hrefToSite}
+              className={buttonVariants({
+                className: "flex justify-center items-center",
+              })}
+              target='_blank'
+            >
+              To Site
+            </Link>
           </div>
         </div>
 
-        <Image src={project.src} alt={project.title} width={"600"} />
+        <Image
+          src={project.src}
+          alt={project.title}
+          className='max-w-[50%] h-fit'
+        />
       </>
     );
   }

@@ -23,7 +23,9 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
           href='/'
           locale='ru'
           className={
-            lang === "ru" ? "font-bold border rounded border-black" : ""
+            lang === "ru"
+              ? "font-bold border rounded border-black dark:border-white"
+              : ""
           }
         >
           Ru
@@ -32,7 +34,9 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
           href='/'
           locale='en'
           className={
-            lang === "en" ? "font-bold border rounded border-black" : ""
+            lang === "en"
+              ? "font-bold border rounded border-black dark:border-white"
+              : ""
           }
         >
           En

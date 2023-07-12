@@ -7,6 +7,10 @@
     "Темная": "Dark",
     "Приветствие": "Gudin Andrey",
     "Описание": "I welcome everyone! I am a frontend developer with 1.5 years of experience. I am currently actively looking for a job. This site will tell about my skills and projects",
-    "Скачать": "Download"
+    "Скачать": "Download",
+    "Приложение для изучения английского языка": "Application for learning English",
+    "Описание проекта Приложение для изучения английского языка": "An application for learning English. Authorization, 3000 words, a textbook with all the words, 2 games for learning words.",
+    "Калькулятор": "Calculator with Drag'N'Drop",
+    "Описание проекта Калькулятор": "Application Калькулятор with Drag'N'Drop. You can drag elements of calculator from area to constructor container or change place"
   }
 }
