@@ -31,13 +31,15 @@ export const Projects: FC<ProjectsProps> = memo(
         title: t("Приложение для изучения английского языка"),
         hrefToGit: "https://github.com/AndreyGudin/RS-Lang",
         hrefToSite: "https://fastify-deploy-production.up.railway.app/app",
+        skills: ["Typescript", "ChartJs", "Webpack"],
       },
       {
         src: CalculatorImage,
         text: t("Описание проекта Калькулятор"),
         title: t("Калькулятор"),
-        hrefToGit: "",
-        hrefToSite: "",
+        hrefToGit: "https://github.com/AndreyGudin/calculator",
+        hrefToSite: "https://andreygudin.github.io/calculator/",
+        skills: ["React", "Typescript", "Dnd Kit", "Tailwind", "Vite"],
       },
       {
         src: image5,

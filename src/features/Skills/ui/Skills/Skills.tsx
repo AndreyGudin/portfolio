@@ -87,7 +87,6 @@ const SkillsItems: SkillsItemType[] = [
 
 export const Skills: FC<SkillsProps> = memo(
   ({ className = "" }: SkillsProps) => {
-    console.log("SkillsItems", SkillsItems[0]);
     return (
       <motion.section
         className={`${className} scroll-mt-[140px] w-full flex flex-wrap gap-9 justify-center border border-accent dark:border-white p-9 cursor-pointer`}

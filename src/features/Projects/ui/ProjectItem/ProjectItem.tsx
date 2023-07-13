@@ -1,8 +1,9 @@
 "use client";
 
 import { Button, buttonVariants } from "@/shared/ui/Button/Button";
+import { Tab } from "@/shared/ui/Tab/Tab";
 import { Text } from "@/shared/ui/Text/Text";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { memo } from "react";
 import type { FC } from "react";
@@ -15,16 +16,17 @@ interface ProjectItemProps {
 export type ProjectItemType = {
   title: string;
   text: string;
-  src: string;
+  src: string | StaticImageData;
   hrefToSite: string;
   hrefToGit: string;
+  skills?: string[];
 };
 
 export const ProjectItem: FC<ProjectItemProps> = memo(
   ({ className = "", project }: ProjectItemProps) => {
     return (
       <>
-        <div className='flex flex-col gap-28 justify-center items-center'>
+        <div className='flex flex-col gap-20 justify-center items-center'>
           <Text
             title={project.title}
             text={project.text}
@@ -32,6 +34,18 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
             sizeTitle={"medium"}
             className='w-[70%]'
           />
+
+          {project.skills ? (
+            <div className='flex flex-wrap gap-4 justify-center w-full'>
+              {project.skills.map((item, i) => {
+                return (
+                  <Tab key={i} type={"badge"}>
+                    <Text text={item} sizeText={"small"} />
+                  </Tab>
+                );
+              })}
+            </div>
+          ) : null}
           <div className='flex gap-6'>
             <Link
               href={project.hrefToGit}
@@ -42,7 +56,6 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
             >
               To GitHub
             </Link>
-
             <Link
               href={project.hrefToSite}
               className={buttonVariants({
