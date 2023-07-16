@@ -11,7 +11,7 @@ export const Burger: FC<BurgerProps> = memo(
   ({ className = "", onClick = () => {} }: BurgerProps) => {
     return (
       <Button
-        className={`${className} block top-0 right-0 z-50 absolute sm:hidden`}
+        className={`${className} fixed top-0 right-0 z-50 sm:hidden mt-3 mr-3`}
         size={"square"}
         onClick={onClick}
       >
