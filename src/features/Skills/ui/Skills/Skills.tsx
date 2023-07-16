@@ -93,7 +93,6 @@ export const Skills: FC<SkillsProps> = memo(
         id='skills'
         initial='hidden'
         whileInView='visible'
-        viewport={{ amount: 0.7 }}
         variants={fromBelow}
       >
         {SkillsItems.map((item) => {

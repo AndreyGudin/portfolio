@@ -21,7 +21,7 @@ export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
 
     return (
       <motion.section
-        className={`${className} w-full flex items-center p-3 scroll-mt-[140px] justify-center`}
+        className={`${className} w-full flex-col sm:flex-row flex items-center p-3 sm:scroll-mt-[140px] justify-center`}
         initial='hidden'
         whileInView='visible'
         viewport={{ amount: 0.7 }}
@@ -58,7 +58,7 @@ export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className='w-[400px] h-fit'
+          className='w-[300px] sm:w-[400px] h-fit'
         >
           <Image src={image1} alt='self' width={"400"} height={"600"} />
         </motion.div>

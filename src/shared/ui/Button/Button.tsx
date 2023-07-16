@@ -19,6 +19,7 @@ export const buttonVariants = cva("", {
     size: {
       sm: ["w-[90px] h-[30px]"],
       m: ["w-[180px] h-[60px]"],
+      square: ["w-[50px] h-[50px]"],
     },
   },
   defaultVariants: {
@@ -41,6 +42,7 @@ export const Button: FC<ButtonProps> = memo(
     className = "",
     children,
     theme,
+    size,
     active = false,
     handleOnClick = () => {},
     ...props
@@ -51,6 +53,7 @@ export const Button: FC<ButtonProps> = memo(
         type='button'
         className={buttonVariants({
           theme,
+          size,
           className: `${className} ${active ? "bg-neutral-100" : ""}`,
         })}
         {...props}

@@ -26,13 +26,13 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
   ({ className = "", project }: ProjectItemProps) => {
     return (
       <>
-        <div className='flex flex-col gap-20 justify-center items-center'>
+        <div className='flex p-3 flex-col gap-3 sm:gap-20 justify-center items-center'>
           <Text
             title={project.title}
             text={project.text}
             sizeText={"medium"}
             sizeTitle={"medium"}
-            className='w-[70%]'
+            className='w-full sm:w-[70%] text-sm'
           />
 
           {project.skills ? (
@@ -46,7 +46,7 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
               })}
             </div>
           ) : null}
-          <div className='flex gap-6'>
+          <div className='flex flex-col sm:flex-row gap-6'>
             <Link
               href={project.hrefToGit}
               className={buttonVariants({
@@ -71,7 +71,7 @@ export const ProjectItem: FC<ProjectItemProps> = memo(
         <Image
           src={project.src}
           alt={project.title}
-          className='max-w-[50%] h-fit'
+          className='hidden xl:block xl:max-w-[50%] h-fit'
         />
       </>
     );

@@ -72,7 +72,7 @@ export const Projects: FC<ProjectsProps> = memo(
     ];
     return (
       <motion.section
-        className={`${className} flex flex-col gap-12 p-3 scroll-mt-[140px]`}
+        className={`${className} w-full flex flex-col gap-12 sm:p-3 scroll-mt-[140px]`}
         id='projects'
       >
         {ProjectsItems.map((item) => {
@@ -80,14 +80,13 @@ export const Projects: FC<ProjectsProps> = memo(
             <motion.div
               initial='hidden'
               whileInView='visible'
-              viewport={{ amount: 0.7 }}
               variants={fromLeft}
               key={item.title}
-              className={`${className} p-5 flex border border-accent dark:border-white hover:scale-[1.01]  shadow-[0_4px_9px_-4px_#3b71ca] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] transition-all`}
+              className={`${className} sm:p-5 flex-col flex xl:flex-row border border-accent dark:border-white hover:scale-[1.01]  shadow-[0_4px_9px_-4px_#3b71ca] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] transition-all`}
             >
               <ProjectItem
                 project={item}
-                className="'bg-block3 dark:bg-dark-block3 p-block transition-all"
+                className="'bg-block3 dark:bg-dark-block3 sm:p-block transition-all"
               />
             </motion.div>
           );

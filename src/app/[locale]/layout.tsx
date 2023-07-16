@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 
 import { Navbar } from "@/widget/Navbar";
 import "../globals.css";
+import { Burger } from "@/widget/Burger/ui/Burger";
 
 const font = localFont({
   src: "../fonts/SourceCodePro-VariableFont_wght.ttf",
@@ -34,7 +35,7 @@ export default async function RootLayout({
   return (
     <html lang='en' className='scroll-smooth'>
       <body
-        className={`${font.className} min-h-screen bg-linear-bg bg-no-repeat dark:bg-dark-linear-bg dark:bg-dark-background text-text dark:text-dark-text transition-all`}
+        className={`${font.className} relative min-w-full min-h-screen bg-linear-bg bg-no-repeat dark:bg-dark-linear-bg dark:bg-dark-background text-text dark:text-dark-text transition-all`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar className='bg-navbar dark:bg-dark-navbar' />

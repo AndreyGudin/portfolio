@@ -8,9 +8,9 @@ export type TitleVariantsProps = VariantProps<typeof titleVariants>;
 export const textVariants = cva("", {
   variants: {
     sizeText: {
-      small: ["text-base"],
-      medium: ["text-3xl"],
-      large: ["text-5xl"],
+      small: ["text-xs sm:text-base"],
+      medium: ["text-base sm:text-3xl"],
+      large: ["text-lg sm:text-5xl"],
     },
   },
   defaultVariants: {
@@ -21,8 +21,8 @@ export const textVariants = cva("", {
 export const titleVariants = cva("font-semibold", {
   variants: {
     sizeTitle: {
-      medium: ["text-5xl"],
-      large: ["text-9xl"],
+      medium: ["text-lg sm:text-5xl"],
+      large: ["text-xl sm:text-9xl"],
     },
   },
   defaultVariants: {
