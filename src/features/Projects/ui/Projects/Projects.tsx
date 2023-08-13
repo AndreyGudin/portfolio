@@ -8,8 +8,8 @@ import { useTranslations } from "next-intl";
 import { ProjectItem, ProjectItemType } from "../ProjectItem/ProjectItem";
 import RSLangImage from "p/RS-Lang.png";
 import CalculatorImage from "p/calculator.png";
+import SimpleHotelCheckImage from "p/simple-hotel-check-img.png";
 
-import image4 from "p/image4.svg";
 import image5 from "p/image5.svg";
 import image6 from "p/image6.svg";
 import image7 from "p/image7.svg";
@@ -42,11 +42,19 @@ export const Projects: FC<ProjectsProps> = memo(
         skills: ["React", "Typescript", "Dnd Kit", "Tailwind", "Vite"],
       },
       {
-        src: image5,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta odio quae, quibusdam nihil id officia omnis hic beatae cupiditate vero quos voluptatum praesentium minus. Doloribus sapiente culpa illum odit libero.",
-        title: "Title4",
-        hrefToGit: "",
-        hrefToSite: "",
+        src: SimpleHotelCheckImage,
+        text: "https://github.com/AndreyGudin/simple-hotel-check",
+        title: "https://andreygudin.github.io/simple-hotel-check/",
+        hrefToGit: t("Описание проекта Simple Hotel Check"),
+        hrefToSite: t("Simple Hotel Check"),
+        skills: [
+          "React",
+          "Typescript",
+          "Redux",
+          "Redux Saga",
+          "Tailwind",
+          "Vite",
+        ],
       },
       {
         src: image6,
