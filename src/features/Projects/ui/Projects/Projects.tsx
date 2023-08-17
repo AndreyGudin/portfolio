@@ -43,10 +43,10 @@ export const Projects: FC<ProjectsProps> = memo(
       },
       {
         src: SimpleHotelCheckImage,
-        text: "https://github.com/AndreyGudin/simple-hotel-check",
-        title: "https://andreygudin.github.io/simple-hotel-check/",
-        hrefToGit: t("Описание проекта Simple Hotel Check"),
-        hrefToSite: t("Simple Hotel Check"),
+        text: t("Описание проекта Simple Hotel Check"),
+        title: t("Simple Hotel Check"),
+        hrefToGit: "https://github.com/AndreyGudin/simple-hotel-check",
+        hrefToSite: "https://andreygudin.github.io/simple-hotel-check/",
         skills: [
           "React",
           "Typescript",
@@ -55,27 +55,6 @@ export const Projects: FC<ProjectsProps> = memo(
           "Tailwind",
           "Vite",
         ],
-      },
-      {
-        src: image6,
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia esse fuga modi, deleniti quo quae eaque suscipit, nesciunt dolor nobis adipisci fugit. Laboriosam et quo beatae totam repudiandae vero tempora.",
-        title: "Title5",
-        hrefToGit: "",
-        hrefToSite: "",
-      },
-      {
-        src: image7,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam maiores saepe ab ut placeat similique deserunt cupiditate omnis? Earum itaque sed distinctio quisquam voluptatibus nisi inventore voluptates quae culpa adipisci?",
-        title: "Title6",
-        hrefToGit: "",
-        hrefToSite: "",
-      },
-      {
-        src: image8,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ut nobis cum recusandae eos, dolor, dolorem nihil quod illo eaque ipsum porro quasi, obcaecati cumque aperiam nulla architecto! Molestiae, deserunt?",
-        title: "Title7",
-        hrefToGit: "",
-        hrefToSite: "",
       },
     ];
     return (
