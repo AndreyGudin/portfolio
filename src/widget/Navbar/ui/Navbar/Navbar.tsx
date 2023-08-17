@@ -36,15 +36,15 @@ export const Navbar: FC<NavbarProps> = memo(
     const NavbarIcons: NavbarIcon[] = [
       {
         svg: GithubIcon,
-        href: "",
+        href: "https://github.com/AndreyGudin",
       },
       {
         svg: LinkedInIcon,
-        href: "",
+        href: "https://www.linkedin.com/in/andrey-gudin-65399124b",
       },
       {
         svg: TelegramIcon,
-        href: "",
+        href: "https://t.me/andreygudin",
       },
     ];
 
