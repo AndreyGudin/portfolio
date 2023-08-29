@@ -41,7 +41,9 @@ export const SelfIntroduction: FC<SelfIntroductionProps> = memo(
           <Button>
             <Link
               download
-              href={"./1.txt"}
+              href={
+                "https://drive.google.com/file/d/1y1iDhRgrl4b7PmJ1l_HXV0e4drLEktEi/view?usp=sharing"
+              }
               target='_blank'
               rel='noopener noreferrer'
             >
