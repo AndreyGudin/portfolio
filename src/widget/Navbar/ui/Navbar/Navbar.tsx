@@ -71,9 +71,9 @@ export const Navbar: FC<NavbarProps> = memo(
         <nav
           className={`${className} ${
             isNavHidden ? "right-[-100%]" : "right-0"
-          } h-screen pt-8 w-[300px] fixed flex gap-10 sm:flex flex-col transition-all sm:flex-row sm:sticky top-0 sm:h-fit sm:w-full sm:justify-between items-center sm:py-10 sm:px-32 z-40`}
+          } h-screen pt-8 w-[300px] fixed flex gap-10 sm:flex flex-col transition-all sm:flex-row sm:sticky top-0 sm:h-fit sm:w-full sm:justify-between items-center sm:py-3 sm:px-10 xl:py-10 xl:px-32 z-40`}
         >
-          <div className=' flex-col sm:flex-row flex w-1/2 justify-around text-3xl'>
+          <div className=' flex-col sm:flex-row flex w-1/2 justify-around text-base sm:text-xl xl:text-3xl'>
             {NavbarItems.map((item, i) => {
               return (
                 <NavbarItem
@@ -86,15 +86,15 @@ export const Navbar: FC<NavbarProps> = memo(
               );
             })}
           </div>
-          <div className='w-1/3 flex justify-around items-center'>
+          <div className='w-1/3 flex justify-around gap-2 items-center'>
             {NavbarIcons.map((icon, i) => {
               return (
                 <Image
-                  className='cursor-pointer hover:scale-[1.05] transition-all'
+                  className='cursor-pointer w-5 sm:w-7 xl:w-12 h-auto hover:scale-[1.05] transition-all'
                   src={icon.svg}
                   alt={icon.href}
                   key={i}
-                  width={"50"}
+                  width={0}
                 />
               );
             })}

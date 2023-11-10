@@ -18,7 +18,9 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
     }, [lang]);
 
     return (
-      <div className={`${className} flex gap-10`}>
+      <div
+        className={`${className} flex flex-col justify-between xl:flex-row xl:gap-10`}
+      >
         <Link
           href='/'
           locale='ru'
